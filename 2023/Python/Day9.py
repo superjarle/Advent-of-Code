@@ -1,53 +1,26 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Dec  9 06:44:22 2023
+def extrapolate_value(history):
+    """
+    Extrapolartes the next value and evalute the diff sequence. Returns extrapolated value. 
+    """
+    sequences = [history]
+    while len(set(sequences[-1])) > 1:
+        sequences.append([seq - sequences[-1][i - 1] for i, seq in enumerate(sequences[-1][1:], 1)])
+    for i in reversed(range(len(sequences) - 1)):
+        sequences[i].append(sequences[i][-1] + sequences[i + 1][-1])
+    return sequences[0][-1]
 
-@author: jkv
-"""
+# Calculates the sum of next and previous values
+def sum_of_next(puzzleinput):
+    with open(puzzleinput, 'r') as file:
+        histories = [list(map(int, line.split())) for line in file.read().splitlines()]
+    return sum(extrapolate_value(history) for history in histories)
 
-class HistoryExtrapolator:
-    def __init__(self, history):
-        self.history = history
-        self.sequences = self._generate_difference_sequences()
+def sum_of_previous(puzzleinput):
+    with open(puzzleinput, 'r') as file:
+        histories = [list(map(int, line.split())) for line in file.read().splitlines()]
+    return sum(extrapolate_value(history[::-1]) for history in histories)
 
-    def _generate_difference_sequences(self):
-        sequences = [self.history]
-
-        while sequences[-1].count(0) != len(sequences[-1]):
-            new_sequence = [sequences[-1][i+1] - sequences[-1][i] for i in range(len(sequences[-1])-1)]
-            sequences.append(new_sequence)
-
-        return sequences
-
-    def extrapolate(self, direction='next'):
-        for i in range(len(self.sequences) - 2, -1, -1):
-            if direction == 'next':
-                self.sequences[i].append(self.sequences[i][-1] + self.sequences[i+1][-1])
-            elif direction == 'previous':
-                self.sequences[i].insert(0, self.sequences[i][0] - self.sequences[i+1][0])
-
-        if direction == 'next':
-            return self.sequences[0][-1]
-        elif direction == 'previous':
-            return self.sequences[0][0]
-        
-    def load_data(file_path):
-        with open(file_path, 'r') as file:
-            data = file.readlines()
-        return [list(map(int, line.split())) for line in data]
-
-# Load the data
-file_path = 'day9.txt'
-histories = load_data(file_path)
-
-
-part1 = 0
-part2 = 0
-for history in histories:
-    extrapolator = HistoryExtrapolator(history)
-    next_value = extrapolator.extrapolate('next')
-    prev_value = extrapolator.extrapolate('previous')
-    part1 += next_value
-    part2 += prev_value
-
-part1, part2
+if __name__ == "__main__":
+    puzzleinput = "day9.txt"
+    print("Solution to part 1 is:", sum_of_next(puzzleinput))
+    print("Solution to part 2 is:", sum_of_previous(puzzleinput))
