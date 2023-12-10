@@ -1,6 +1,6 @@
 class PipeMaze:
     """
-    A class to represent a maze of pipes. It reads a pipe configuration from a file, 
+    A class to represent a maze of pipes. It reads a pipe configuration from the puzzle and a file, 
     creates a graph representation of the maze, and provides methods to simulate movement 
     through the maze and calculate empty spaces.
     """
