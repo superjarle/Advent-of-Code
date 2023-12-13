@@ -31,7 +31,7 @@ class WindowShopper:
                 else:
                     return i + 1
         return -1
-    
+
     @staticmethod
     def count_differences(p1, p2):
         return sum(c1 != c2 for c1, c2 in zip(p1, p2))
@@ -73,16 +73,14 @@ class WindowShopper:
                 if vertical_reflection != -1:
                     total += vertical_reflection
         return total
-        
+
     def calculate_part2(self):
         total = 0
         for pattern in self.patterns:
-            # Check for horizontal reflection
             horizontal_reflection = self.find_reflection(pattern)
             if horizontal_reflection != -1:
                 total += 100 * horizontal_reflection
             else:
-                # Rotate pattern to check for vertical reflection
                 vertical_reflection = self.find_reflection(self._rotate_pattern(pattern))
                 if vertical_reflection != -1:
                     total += vertical_reflection
