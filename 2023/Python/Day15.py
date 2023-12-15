@@ -56,7 +56,7 @@ class LensSolver:
         return del1_resultat, del2_resultat, totaltid
 
 if __name__ == '__main__':
-    solver = LavaProductionSolver('input.txt')
+    solver = LensSolver('input.txt')
     del1_resultat, del2_resultat, totaltid = solver.kjor()
     print(f"Svaret for del 1 er: {del1_resultat}")
     print(f"Svaret for del 2 er: {del2_resultat}")
