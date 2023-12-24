@@ -60,12 +60,12 @@ class Christmas:
         res = solve_poly_system(equations, [x, y, z, dx, dy, dz, t1, t2, t3])
         return res
 
-# Example usage
+#solving 
 christmas = Christmas("24.txt", (200000000000000, 400000000000000))
 print("Number of intersections:", christmas.calculate_intersections())
 solution = christmas.solve_poly_system()
 if solution:
-    print("Solution for polynomial system:", solution[0])
+    #print("Solution for polynomial system:", solution[0])
     print("Sum of coordinates:", sum(solution[0][:3]))
 else:
     print("No solution found for the polynomial system")
