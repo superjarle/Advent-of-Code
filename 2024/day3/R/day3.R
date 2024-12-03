@@ -1,6 +1,3 @@
-#' @rdname day03
-#' @export
-
 mul <- function(x, y) x*y 
 
 day03a <- function(x) {
