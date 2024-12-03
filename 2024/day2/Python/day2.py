@@ -3,7 +3,7 @@
 @author: jkv
 """
 
-def is_save(level):
+def is_safe(level):
     """
     Check if a level is safe based on given rules:
     - Consecutive differences must remain consistent in direction.
@@ -30,7 +30,7 @@ def part_a(levels):
     """
     Solve Part A: Count how many levels are safe.
     """
-    return sum(1 for level in levels if is_save(level))
+    return sum(1 for level in levels if is_safe(level))
 
 
 def part_b(levels):
@@ -39,14 +39,14 @@ def part_b(levels):
     """
     safe_count = 0
     for level in levels:
-        if is_save(level):
+        if is_safe(level):
             safe_count += 1
             continue
 
         # Check if removing one element makes the level safe
         for i in range(len(level)):
             modified_level = level[:i] + level[i + 1:]
-            if is_save(modified_level):
+            if is_safe(modified_level):
                 safe_count += 1
                 break
 
