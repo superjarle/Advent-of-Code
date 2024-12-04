@@ -1,6 +1,6 @@
 # Advent of Code 🎄 (Multiple Years)
 
-Welcome to my repository of solutions for the **Advent of Code** challenges! Advent of Code is an annual programming event featuring daily puzzles from December 1st to 25th. This repository contains my personal solutions spanning multiple years, including **2024**, where I am solving the challenges in **Python** and **R**, the main tools used at my workplace, **Statistics Norway**.
+Welcome to my repository of solutions for the **Advent of Code** challenges! Advent of Code is an annual programming event featuring daily puzzles from December. This repository contains my personal solutions spanning multiple years, including **2024**, where I am solving the challenges in **Python** and **R**, the main tools used at my workplace, **Statistics Norway**.
 
 ---
 
@@ -27,18 +27,6 @@ For 2024, my goal is to:
 - Have fun while tackling creative and challenging puzzles!
 
 For previous years, you’ll find solutions in Python and other languages, showcasing my journey of growth and exploration as a programmer.
-
----
-
-## 📦 Tools & Libraries
-
-### Python
-- Standard libraries like `math`, `itertools`, etc.
-- Problem-specific tools as needed.
-
-### R
-- Base R and tidyverse packages for efficient data manipulation.
-- Custom scripts for tackling specific challenges.
 
 ---
 
