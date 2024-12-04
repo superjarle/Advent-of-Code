@@ -77,12 +77,3 @@ source("day1.R")
 
 I work at **Statistics Norway**, where Python and R are essential for statistical analysis and automation. These solutions reflect my passion for continuous learning and using programming to solve complex problems efficiently.
 
----
-
-## 📧 Contact
-
-Feel free to reach out if you’d like to collaborate, discuss solutions, or share feedback! 
-
----
-
-Does this align with what you had in mind? Let me know if you'd like any adjustments!
